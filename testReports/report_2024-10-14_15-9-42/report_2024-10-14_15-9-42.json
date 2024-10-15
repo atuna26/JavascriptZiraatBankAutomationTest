@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-10-14T12:09:46.924Z",
+    "end": "2024-10-14T12:10:17.556Z",
+    "duration": 30632,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "055d0194-213f-45d2-920f-ab448ddc3fed",
+      "title": "",
+      "fullFile": "C:\\Users\\alptuna\\OneDrive - Orion Systems Integrators, LLC\\Desktop\\BankingAutomationTest\\test.js",
+      "file": "\\test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+          "title": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15",
+          "fullFile": "C:\\Users\\alptuna\\OneDrive - Orion Systems Integrators, LLC\\Desktop\\BankingAutomationTest\\test.js",
+          "file": "\\test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"before all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "timedOut": false,
+              "duration": 16433,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new wd.Builder().usingServer(\"http://localhost:4723\").withCapabilities(caps).build();\nconsole.log(\"Driver has started.\")\npublic = new Public(driver)\nloginPage = new LoginPage(driver);\nhomePage = new HomePage(driver);\nmenuPage = new MenuPage(driver);\ntransferPage = new TransferPage(driver);",
+              "err": {},
+              "uuid": "5d84d8ff-d3f6-4da5-b71b-83c39ceabc9e",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"after all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "timedOut": false,
+              "duration": 1151,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(driver){\n  await driver.quit()\n  console.log(\"Driver quited\")\n}",
+              "err": {},
+              "uuid": "97824726-b1cc-43dd-b1c5-273420779907",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"after each\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(this.currentTest.state===\"failed\"){\n  const date = new Date();\n  const timestamp = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;\n  const screenShot = await driver.takeScreenshot();\n  const screenShotPath = path.join(__dirname,\"./testReports/ScreenShots\", `${this.currentTest.title}${timestamp}.png`)\n  \n  fs.writeFileSync(screenShotPath,screenShot,\"base64\");\n  addContext(this,\"Test Fail Screenshot\")\n  addContext(this,screenShotPath)\n  console.log(screenShotPath)\n}",
+              "err": {},
+              "uuid": "8fc39f15-023d-4062-81c6-63e1ef678af9",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login on same device already valid credentials @smoke",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Login on same device already valid credentials @smoke",
+              "timedOut": false,
+              "duration": 3563,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.login(\"235689\")",
+              "err": {},
+              "uuid": "55093d6d-bf1f-45a4-90b9-2639e3a4ed12",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check Balance",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Check Balance",
+              "timedOut": false,
+              "duration": 4422,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const balance = await homePage.checkBalance();\nconsole.log(\"Account Balance:\", balance);",
+              "err": {},
+              "uuid": "5e8f8ea5-5009-46fb-b621-ad2cb1bcdc4f",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Direct Money Transfer",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Direct Money Transfer",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"Test Fail Screenshot\",\n  \"C:\\\\Users\\\\alptuna\\\\OneDrive - Orion Systems Integrators, LLC\\\\Desktop\\\\BankingAutomationTest\\\\testReports\\\\ScreenShots\\\\Direct Money Transfer20241014151011.png\"\n]",
+              "code": "await public.toggleMenuPage();\nawait menuPage.directMoneyTransferToOtherAccount()\nawait transferPage.moneyTransferProcess(\"TR10 0011 1000 0000 0113 2168 85\",\"Alperen Tuna\",\"1\",\"\")",
+              "err": {
+                "message": "TypeError: Invalid locator",
+                "estack": "TypeError: Invalid locator\n    at Object.check [as checkedLocator] (node_modules\\selenium-webdriver\\lib\\by.js:417:9)\n    at WebDriver.findElement (node_modules\\selenium-webdriver\\lib\\webdriver.js:999:20)\n    at Public.toggleMenuPage (pages\\public.js:13:27)\n    at Context.<anonymous> (test.js:86:18)\n    at process.processImmediate (node:internal/timers:483:21)",
+                "diff": null
+              },
+              "uuid": "857e12c4-49fa-4825-98b1-196d35f1633d",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Checking is there any warning when internet connection is disabled",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Checking is there any warning when internet connection is disabled",
+              "timedOut": false,
+              "duration": 58,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"Test Fail Screenshot\",\n  \"C:\\\\Users\\\\alptuna\\\\OneDrive - Orion Systems Integrators, LLC\\\\Desktop\\\\BankingAutomationTest\\\\testReports\\\\ScreenShots\\\\Checking is there any warning when internet connection is disabled20241014151012.png\"\n]",
+              "code": "await public.closeMobileData();\nawait public.closeWifi();\nawait homePage.checkWarning();",
+              "err": {
+                "message": "WebDriverError: An unknown server-side error occurred while processing the command. Original error: Potentially insecure feature 'adb_shell' has not been enabled. If you want to enable this feature and accept the security ramifications, please do so by following the documented instructions at http://appium.io/docs/en/2.0/guides/security/",
+                "estack": "WebDriverError: An unknown server-side error occurred while processing the command. Original error: Potentially insecure feature 'adb_shell' has not been enabled. If you want to enable this feature and accept the security ramifications, please do so by following the documented instructions at http://appium.io/docs/en/2.0/guides/security/\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:521:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:514:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:446:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async WebDriver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:744:17)\n    at async Public.closeMobileData (pages\\public.js:17:9)\n    at async Context.<anonymous> (test.js:92:5)",
+                "diff": null
+              },
+              "uuid": "a18b4adc-f429-46d0-aaef-e4b4e4140653",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logout",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Logout",
+              "timedOut": false,
+              "duration": 3476,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homePage.logout();\nconsole.log(\"Logout clicked\");",
+              "err": {},
+              "uuid": "9772fdf5-16d2-4daa-b281-5c8fababffb6",
+              "parentUUID": "cc3c1136-9a1e-4a75-96c1-b847c1037c85",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "55093d6d-bf1f-45a4-90b9-2639e3a4ed12",
+            "5e8f8ea5-5009-46fb-b621-ad2cb1bcdc4f",
+            "9772fdf5-16d2-4daa-b281-5c8fababffb6"
+          ],
+          "failures": [
+            "857e12c4-49fa-4825-98b1-196d35f1633d",
+            "a18b4adc-f429-46d0-aaef-e4b4e4140653"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11519,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_2024-10-14_15-9-42.html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "testReports/report_2024-10-14_15-9-42",
+        "reportFilename": "report_2024-10-14_15-9-42.html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

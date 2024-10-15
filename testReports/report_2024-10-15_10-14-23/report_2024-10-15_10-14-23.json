@@ -1,0 +1,239 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-15T07:14:28.266Z",
+    "end": "2024-10-15T07:15:22.496Z",
+    "duration": 54230,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 5,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "72783f53-acf2-42f2-a51a-438a15502458",
+      "title": "",
+      "fullFile": "C:\\Users\\alptuna\\OneDrive - Orion Systems Integrators, LLC\\Desktop\\BankingAutomationTest\\test.js",
+      "file": "\\test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+          "title": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15",
+          "fullFile": "C:\\Users\\alptuna\\OneDrive - Orion Systems Integrators, LLC\\Desktop\\BankingAutomationTest\\test.js",
+          "file": "\\test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Login on same device already valid credentials @smoke\"",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"before all\" hook for \"Login on same device already valid credentials @smoke\"",
+              "timedOut": false,
+              "duration": 54218,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new wd.Builder().usingServer(\"http://localhost:4723\").withCapabilities(caps).build();\nconsole.log(\"Driver has started.\")\npublic = new Public(driver)\nloginPage = new LoginPage(driver);\nhomePage = new HomePage(driver);\nmenuPage = new MenuPage(driver);\ntransferPage = new TransferPage(driver);",
+              "err": {
+                "message": "WebDriverError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.ziraat.ziraatmobil' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\\\Users\\\\alptuna\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe -P 5037 -s emulator-5554 shell am start -W -n com.ziraat.ziraatmobil/com.ziraat.ziraatmobile.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' timed out after 20000ms'. Try to increase the 20000ms adb execution timeout represented by 'adbExecTimeout' capability",
+                "estack": "WebDriverError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.ziraat.ziraatmobil' application. Consider checking the driver's troubleshooting documentation. Original error: Error executing adbExec. Original error: 'Command 'C:\\\\Users\\\\alptuna\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe -P 5037 -s emulator-5554 shell am start -W -n com.ziraat.ziraatmobil/com.ziraat.ziraatmobile.SplashActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000' timed out after 20000ms'. Try to increase the 20000ms adb execution timeout represented by 'adbExecTimeout' capability\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:521:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:514:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:446:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": null
+              },
+              "uuid": "c1fff730-1bcb-4e1a-a2e1-f3bcecf438bc",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"after all\" hook in \"ziraat mobile app test Device: Medium_Phone_API_35 Version: 15\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(driver){\n  await driver.quit()\n  console.log(\"Driver quited\")\n}",
+              "err": {},
+              "uuid": "0c01ea28-1e7c-45ef-a40e-526c1ef89b1b",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 \"after each\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if(this.currentTest.state===\"failed\"){\n  const date = new Date();\n  const timestamp = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;\n  const screenShot = await driver.takeScreenshot();\n  const screenShotPath = path.join(__dirname,\"./testReports/ScreenShots\", `${this.currentTest.title}${timestamp}.png`)\n  \n  fs.writeFileSync(screenShotPath,screenShot,\"base64\");\n  addContext(this,\"Test Fail Screenshot\")\n  addContext(this,screenShotPath)\n  console.log(screenShotPath)\n}",
+              "err": {},
+              "uuid": "75683db1-a632-4d37-bbc6-7dd4f52cd195",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login on same device already valid credentials @smoke",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Login on same device already valid credentials @smoke",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.login(\"235689\")",
+              "err": {},
+              "uuid": "6beefc21-b66c-4c31-86cb-d4009f34b133",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Check Balance",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Check Balance",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const balance = await homePage.checkBalance();\nconsole.log(\"Account Balance:\", balance);",
+              "err": {},
+              "uuid": "2796701b-898a-4f05-81f3-2f5f65b64e33",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Direct Money Transfer",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Direct Money Transfer",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await public.toggleMenuPage();\nawait menuPage.directMoneyTransferToOtherAccount()\nawait transferPage.moneyTransferProcess(\"TR10 0011 1000 0000 0113 2168 85\",\"Alperen Tuna\",\"1\",\"\")",
+              "err": {},
+              "uuid": "85b2c969-5b70-4dc5-bd5c-6c1dbfa170fa",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Checking is there any warning when internet connection is disabled",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Checking is there any warning when internet connection is disabled",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await public.disableMobileData();\n   await public.disableWifi();\nconst warningText = await homePage.checkWarning();\nconsole.log(warningText)",
+              "err": {},
+              "uuid": "7132e3bd-f9b4-41c3-84f7-238119d9dddd",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Logout",
+              "fullTitle": "ziraat mobile app test Device: Medium_Phone_API_35 Version: 15 Logout",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await homePage.logout();\nconsole.log(\"Logout clicked\");",
+              "err": {},
+              "uuid": "186a2e39-bbad-4903-8fdc-9a9b084c1a89",
+              "parentUUID": "5e7534ea-7b3e-43e9-a834-ed842ec90dc1",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "6beefc21-b66c-4c31-86cb-d4009f34b133",
+            "2796701b-898a-4f05-81f3-2f5f65b64e33",
+            "85b2c969-5b70-4dc5-bd5c-6c1dbfa170fa",
+            "7132e3bd-f9b4-41c3-84f7-238119d9dddd",
+            "186a2e39-bbad-4903-8fdc-9a9b084c1a89"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report_2024-10-15_10-14-23.html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "testReports/report_2024-10-15_10-14-23",
+        "reportFilename": "report_2024-10-15_10-14-23.html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
